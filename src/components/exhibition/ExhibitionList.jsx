@@ -8,6 +8,7 @@ const videoList = [
     team : '우리조',
     category : '강감찬관악종합사회복지관',
     url: "/videos/ganggamchan_1.mp4",
+    poster: "/thumnails/g1.png"
   },
   {
     id: 2,
@@ -15,6 +16,7 @@ const videoList = [
     team : '팀팀',
     category : '강감찬관악종합사회복지관',
     url: "/videos/ganggamchan_2.mp4",
+    poster: "/thumnails/g2.png"
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const videoList = [
     team : '찬성팀',
     category : '강감찬관악종합사회복지관',
     url: "/videos/ganggamchan_3.mp4",
+    poster: "/thumnails/g3.png"
   },
   {
     id: 4,
@@ -29,6 +32,7 @@ const videoList = [
     team : '늦었조',
     category : '강감찬관악종합사회복지관',
     url: "/videos/ganggamchan_4.mp4",
+    poster: "/thumnails/g4.png"
   }
   ,
   {
@@ -37,6 +41,7 @@ const videoList = [
     team : '과일조',
     category : '강감찬관악종합사회복지관',
     url: "/videos/ganggamchan_5.mp4",
+    poster: "/thumnails/g5.png"
   }
   , {
     id: 6,
@@ -44,6 +49,7 @@ const videoList = [
     team : '해치팀',
     category : '강감찬관악종합사회복지관',
     url: "/videos/ganggamchan_6.mp4",
+    poster: "/thumnails/g6.png"
   }
   , {
     id: 99,

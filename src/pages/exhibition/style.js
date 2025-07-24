@@ -22,7 +22,7 @@ export const ExhibitionWrap = styled.div`
 
   @media (max-width: 768px) {
     img {
-      padding-top: 80px;
+      padding-top: 60px;
       width: 200%;
     }
     .inner {
