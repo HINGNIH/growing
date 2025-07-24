@@ -26,7 +26,7 @@ const Content1 = () => {
                         </p>
                       </div>
                       <div className="intro-right">
-                        <img src='../../../public/images/growing_logo.png'></img>
+                        <img src="/images/growing_logo.png" alt="로고" />
                       </div>
                       
                     </div>
