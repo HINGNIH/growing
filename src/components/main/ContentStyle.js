@@ -19,6 +19,7 @@ export const ContentStyle = styled.div`
     justify-content: space-between;
     flex-wrap:wrap;
     gap : 20px;
+    max-width:1200px;
     }
     .intro-title {
     margin-bottom: 20px;
@@ -51,7 +52,9 @@ export const ContentStyle = styled.div`
         margin-bottom: 40px;
     }
 
-    
+    @media (max-width: 768px) {
+     margin-top: 50px;
+    }
     
 `;
 

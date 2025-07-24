@@ -19,7 +19,7 @@ const ScrollButton = styled.button`
   width: 44px;
   height: 44px;
   color: #666;
-  font-size: 20px;
+  font-size: clamp(20px, 3vw, 24px);
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   transition: background-color 0.3s;

@@ -16,6 +16,11 @@ export const VisualWrap = styled.section`
     display: block;
     margin: 0 auto;
   }
+      @media (max-width: 768px) {
+      padding-top: 60px;
+       width: 110%;
+       height: auto;
+}
 `;
 
 export const MainWrap = styled.div`

@@ -11,8 +11,7 @@ export const HeaderWrap = styled.header`
 
     display: flex;          
     align-items: center;    
-    justify-content: space-between; 
-    padding: 0 20px;        
+    justify-content: space-between;       
   }
 
   h1 {
@@ -20,11 +19,14 @@ export const HeaderWrap = styled.header`
     margin: 0 0 0 80px;
     a {
       img {
-        width: 70px;
+        width: 60px;
       }
     }
   }
   @media (max-width: 768px) {
+   .inner {
+   height : 60px;
+   }
   h1 {
   margin : 0 0 0 20px;
   }
@@ -83,7 +85,7 @@ export const NavWrap = styled.nav`
       transform: none;
       top: auto;
       right: auto;
-
+      
       ul {
         width: 100%;
         justify-content: flex-end;
@@ -106,12 +108,13 @@ export const NavWrap = styled.nav`
           padding: 6px 12px;
           border-radius: 0.5rem;
           color: #8ED973;
-          font-size: 1rem;
+          font-size: 13px;
           font-weight: 500;
           transition: background-color 0.3s ease;
-          border: 2px solid #8ED973;
+          border: 1px solid #8ED973;
           display: inline-block;
           text-decoration: none;
+          
         }
 
         li:last-child a:hover {
