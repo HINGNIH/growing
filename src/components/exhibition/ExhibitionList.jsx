@@ -4,7 +4,7 @@ import {ExhibitionListWrap, FilterButton, FilterWrap} from './ExhibitionStyle'
 const videoList = [
   {
     id: 1,
-    title: "코드너머의 마음",
+    title: "코드 너머의 마음",
     team : '우리조',
     category : '강감찬관악종합사회복지관',
     url: "/videos/ganggamchan_1.mp4",
@@ -33,14 +33,14 @@ const videoList = [
   ,
   {
     id: 5,
-    title: "하루가 본 놀이터대소통",
+    title: "하루가 본 놀이터대소동",
     team : '과일조',
     category : '강감찬관악종합사회복지관',
     url: "/videos/ganggamchan_5.mp4",
   }
   , {
     id: 6,
-    title: "너와함께라면",
+    title: "너와 함께라면",
     team : '해치팀',
     category : '강감찬관악종합사회복지관',
     url: "/videos/ganggamchan_6.mp4",
