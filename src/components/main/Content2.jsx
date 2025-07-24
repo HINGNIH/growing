@@ -1,63 +1,42 @@
-import { ContentStyle } from "./ContentStyle";
+import { RiRobot2Line } from "react-icons/ri";
+import { FaHandshakeSimple } from "react-icons/fa6";
+import { FaBalanceScale } from "react-icons/fa";
+import { MdOutlinePhoneAndroid } from "react-icons/md";
+import { PiPlantBold } from "react-icons/pi";
+import { GiLightBulb } from "react-icons/gi";
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { KeywordsStyle } from "./ContentStyle";
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
 
-// import './styles.css';
-
-// import required modules
-import { Pagination, Navigation } from 'swiper/modules';
 
 
 const Content2 = () => {
-  const newItems = [
-    { id: 1, src: "../images/new01.jpg", name: "Puffer Jacket (Pale Yellow)", price: "₩ 278,000" },
-    { id: 2, src: "../images/new02.jpg", name: "Puffer Jacket (Turkish Blue)", price: "₩ 278,000" },
-    { id: 3, src: "../images/new03.jpg", name: "Puffer Jacket (Soft Pink)", price: "₩ 278,000" },
-    { id: 4, src: "../images/new04.jpg", name: "Puffer Jacket (Rose)", price: "₩ 278,000" },
-    { id: 5, src: "../images/new05.jpg", name: "Puffer Jacket (Black)", price: "₩ 278,000" },
-    { id: 6, src: "../images/new10.jpg", name: "Puffer Jacket (Ivory)", price: "₩ 278,000" },
-    { id: 7, src: "../images/new06.jpg", name: "Knit Balaclava (Sky Blue)", price: "₩ 48,000" },
-    { id: 8, src: "../images/new07.jpg", name: "Knit Balaclava (Rose Pink)", price: "₩ 48,000" },
-    { id: 9, src: "../images/new08.jpg", name: "Knit Balaclava (Black)", price: "₩ 48,000" },
-    { id: 10, src: "../images/new09.jpg", name: "Knit Balaclava (Apricot)", price: "₩ 48,000" },
+   const keywords = [
+    { text: '디지털 리터러시', icon:<MdOutlinePhoneAndroid /> },
+    { text: '생성형 AI 체험', icon:<RiRobot2Line /> },
+    { text: '디지털 윤리 교육', icon: <FaBalanceScale /> },
+    { text: '디지털 디톡스', icon: <PiPlantBold /> },
+    { text: '자율과 창의', icon:  <GiLightBulb />},
+    { text: '공감과 협력', icon: <FaHandshakeSimple /> },
 ];
     return (
-        <ContentStyle>
+        <KeywordsStyle>
             <div className='inner'>
-                <h2> NEW ITEM </h2>
-                <>
-        <Swiper
-          slidesPerView={4}
-          spaceBetween={30}
-          loop={true}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Pagination, Navigation]}
-          className="mySwiper"
-        >
-          {newItems.map(item => (
-                        <SwiperSlide key={item.id}>
-                          <div className="productList">
-                          <img src={item.src} alt={item.name} />
-                            <div className="product-info">
-                                <h3>{item.name}</h3>
-                                <p>{item.price}</p>
-                            </div>
-                          </div>
-                            
-                        </SwiperSlide>
+                <h2> 그로잉 핵심 키워드</h2>
+                <p>그로잉은 다음과 같은</p>
+                <p><strong>핵심 키워드</strong>를 바탕으로</p>
+                <p><strong>지속적인 교육</strong>을 펼치고 있습니다.</p>
+
+                <ul className="keywords-list">
+                    {keywords.map((item, idx) => (
+                        <li key={idx}>
+                            <span className="icon">{item.icon}</span>
+                            <span>{item.text}</span>
+                        </li>
                     ))}
-        </Swiper>
-      </>
+                </ul>
             </div>
-        </ContentStyle>
+        </KeywordsStyle>
     );
 };
 

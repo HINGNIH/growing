@@ -5,34 +5,20 @@ import Layout from './commpon/Layout';
 import NotFiles from './pages/notfile';
 import Main from './pages/main';
 
-import {About, Product, Notice, Cart,Join, Login, Logout,  Customer} from './pages';
-import {NoticeDetail, CustomerAdd, CustomerEdit, CustomerDetail } from './components'
-
+import { Exhibition} from './pages';
+import ScrollButtons from './components/scrollbutton/ScrollButtons';
 const App = () => {
     return (
         <>
             <Router>
                 <GlobalStyle />
+                <ScrollButtons />  
                 <Routes>
                     <Route path='/' element={<Layout />}>
                         <Route index element={<Main />} />
-                        <Route path='/about'element={<About />} />
-                        <Route path='/product' element={<Product />} />
-                        <Route path='/cart' element={<Cart/>} />
-                        <Route path='/join' element={<Join/>} />
-                        <Route path='/logout' element={<Logout/>} />
-                        <Route path='/login' element={<Login/>} />
+                        <Route path='/exhibition' element={<Exhibition />}/>
 
-                        <Route path='/notice'>
-                            <Route index element={<Notice/>}/>
-                            <Route path=":noticeID" element={<NoticeDetail/>}/>
-                        </Route>
-                        <Route path='/customer'>
-                            <Route index element={<Customer/>}/>
-                            <Route path="customeradd" element={<CustomerAdd/>}/>
-                            <Route path="customeredit" element={<CustomerEdit/>}/>
-                            <Route path=":customerID" element={<CustomerDetail/>}/>
-                        </Route>
+                     
                     </Route>
 
                     <Route path='*' element={<NotFiles />} />

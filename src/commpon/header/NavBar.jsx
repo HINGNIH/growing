@@ -1,56 +1,64 @@
-import { Link } from 'react-router-dom';
-import { NavWrap, TopMenu } from './style';
-import { useSelector } from 'react-redux';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { TbExternalLink } from "react-icons/tb";
+import { NavWrap } from "./style";
 
 const NavBar = () => {
-    const {carts, cartTotal} = useSelector(state=>state.cart)
-    const authed = useSelector(state => state.auth.authed); // 로그인 상태 가져오기
+  const location = useLocation();
+  const [isMobile, setIsMobile] = useState(false);
 
-    return (
-        <>
-            <NavWrap className='nav'>
-                <ul>
-                    <li>
-                        <Link to={'/about'}>About</Link>
-                    </li>
-                    <li>
-                        <Link to={'/product'}>Product</Link>
-                    </li>
-                    <li>
-                        <Link to={'/notice'}>Notice</Link>
-                    </li>
-                    <li>
-                        <Link to={'/customer'}>Customer</Link>
-                    </li>
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
 
-                    
-                </ul>
-            </NavWrap>
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
 
-            <TopMenu className='top-menu'>
-               
-                <li>
-                    <Link to={'/join'}>Join</Link>
-                </li>
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
-                {authed ? (
-                    <li>
-                        <Link to={'/logout'}>Logout</Link>
-                    </li>
-                ) : (
-                    <li>
-                        <Link to={'/login'}>Login</Link>
-                    </li>
-                )}
+  const scrollToSection = (id) => {
+    if (location.pathname === "/") {
+      const element = document.getElementById(id);
+      if (element) {
+        const headerHeight = 100; // 헤더 높이 픽셀값
+        const elementPosition =
+          element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerHeight;
 
-                <li>
-                    <Link to='/cart'>
-                    Cart <span> {carts.length} </span>
-                    </Link>
-                </li>
-            </TopMenu>
-        </>
-    );
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    } else {
+      window.location.href = `/#${id}`;
+    }
+  };
+
+  return (
+    <NavWrap className="nav">
+      <ul>
+        <li>
+          <button onClick={() => scrollToSection("intro")}>소개</button>
+        </li>
+        <li>
+          <button onClick={() => scrollToSection("timeline")}>타임라인</button>
+        </li>
+        <li>
+          <button onClick={() => scrollToSection("channel")}>소식채널</button>
+        </li>
+        <li>
+          <Link to={"/exhibition"}>
+            {isMobile ? <><TbExternalLink /> 팝콘랜드 바로가기</> : "팝콘랜드"}
+          </Link>
+        </li>
+      </ul>
+    </NavWrap>
+  );
 };
 
 export default NavBar;

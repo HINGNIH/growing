@@ -1,0 +1,98 @@
+import { useState } from "react";
+import ExhibitionItem from "./ExhibitionItem";
+import {ExhibitionListWrap, FilterButton, FilterWrap} from './ExhibitionStyle'
+const videoList = [
+  {
+    id: 1,
+    title: "코드너머의 마음",
+    team : '우리조',
+    category : '강감찬관악종합사회복지관',
+    url: "/videos/ganggamchan_1.mp4",
+  },
+  {
+    id: 2,
+    title: "우리가 바꾼 하루, 지구가 달라졌어",
+    team : '팀팀',
+    category : '강감찬관악종합사회복지관',
+    url: "/videos/ganggamchan_2.mp4",
+  },
+  {
+    id: 3,
+    title: "지구 지킴이 플로",
+    team : '찬성팀',
+    category : '강감찬관악종합사회복지관',
+    url: "/videos/ganggamchan_3.mp4",
+  },
+  {
+    id: 4,
+    title: "로봇의 반란",
+    team : '늦었조',
+    category : '강감찬관악종합사회복지관',
+    url: "/videos/ganggamchan_4.mp4",
+  }
+  ,
+  {
+    id: 5,
+    title: "하루가 본 놀이터대소통",
+    team : '과일조',
+    category : '강감찬관악종합사회복지관',
+    url: "/videos/ganggamchan_5.mp4",
+  }
+  , {
+    id: 6,
+    title: "너와함께라면",
+    team : '해치팀',
+    category : '강감찬관악종합사회복지관',
+    url: "/videos/ganggamchan_6.mp4",
+  }
+  , {
+    id: 99,
+    title: "시계수리공",
+    team : '그로잉',
+    category : '기타',
+    url: "/videos/03.mp4",
+  }
+  , {
+    id: 100,
+    title: "구름 위의 토끼",
+    team : '그로잉',
+    category : '기타',
+    url: "/videos/01.mp4",
+  }
+  
+];
+
+const ExhibitionList = () => {
+  const [category, setCategory] = useState("전체");
+  const categories = ["전체", "강감찬관악종합사회복지관", "은평신나센터", "기타" ];
+
+  const filteredVideos =
+    category === "전체"
+      ? videoList
+      : videoList.filter((video) => video.category === category);
+
+  return (
+    <>
+    <FilterWrap>
+      {categories.map((cat)=>(
+        <FilterButton
+        key={cat}
+        onClick={()=>setCategory(cat)}
+        active={category === cat}
+        >
+          {cat}
+        </FilterButton>
+      ))}
+    </FilterWrap>
+
+    
+    <ExhibitionListWrap>
+       {filteredVideos.map((video) => (
+    <ExhibitionItem key={video.id} video={video} />
+  ))}
+    </ExhibitionListWrap>
+    </>
+  );
+};
+
+export default ExhibitionList;
