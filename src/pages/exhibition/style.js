@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const ExhibitionWrap = styled.div`
+
+
   img {
     width: 100%;
     position: relative;
