@@ -7,8 +7,8 @@ const timelineData = [
   { date: '2024.08', content: '용산 7호점 우리동네 키움센터', desc: '총 2회 교육 진행' },
   { date: '2024.09', content: '강감찬관악종합사회복지관', desc: '총 2회 교육 진행' },
   { date: '2025.06', content: '그로잉 2기 활동 시작' },
-  { date: '2025.07', content: '강감찬관악종합사회복지관', desc: '총 2회 교육 진행' },
-  { date: '2025.07', content: '은평신나센터', desc: '총 2회 교육 진행 예정' }
+  { date: '2025.07', content: '강감찬관악종합사회복지관', desc: '총 1회 캠프 교육 진행' },
+  { date: '2025.07', content: '은평신나센터', desc: '총 2회 교육 진행' }
 ]
 
 const Timeline = () => {
